@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Favorite Anime Character</title>
+  <script>
+    function showPersonality() {
+      var name = document.getElementById("name").value;
+      var character = document.querySelector('input[name="favoriteCharacter"]:checked');
+
+      if (name && character) {
+        var characterValue = character.value;
+
+        var message = "";
+        switch (characterValue) {
+          case "Gojo":
+            message = name + ", aapne Gojo select kiya hai. Mujhe lagta hai aap ek no ke chapri ho, aap safed bal rakh ke mele mein ghumke ladkiyon ko impress karna chahte ho. Overall, aapki personality gay jesi hai.";
+            break;
+          case "Itachi":
+            message = "<span style='color: red;'>" + name + ", aap to ek no ke khandani killer nikale. Han, aapko dekh ke lagta hai aap Itachi ke roop ko dharan karke apne kul ka sarwanash kar sakte hain,aaaapki personality duryodhan jesi hai.</span>";
+            break;
+          case "Lucky Man":
+            message = "<span style='color: red;'>" + name + ", waah aap Lucky Man banoge. Waise, aapkejese name wale log lucky nahi gandu hote hain, par aapke sochne ke tarike se lag raha hai aap jeevan mein lucky to nahi honge, par moti naak wali ladki se shadi karne ke bad aap Lucky ban jaoge,Overall aapki personality Rahul Gandhi jesi hai.</span>";
+            break;
+          case "Ninja Hatori":
+            message = "<span style='color: green;'>" + name + ", aap block mein jake apna name ke aage Hatori laga dijiye, kyonki main dekh pa raha hoon aap kafi furtile to nahi hain par lete lete Hatori banne ka tarika yahi hai. Ek bar apne ghar ke samne ped se dusre ped pe chhlang marne ka try jarur kare, overall aapki personality Russian jesi hai.</span>";
+            break;
+        }
+
+        document.getElementById("result").innerHTML = message;
+      } else {
+        alert("Please enter your name and select a character before submitting.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 align="center"><b>Favourite Anime Character<br>and your personality</h1>
+  <form>
+    <p>Enter Your Name:<br>
+      <input type="text" id="name" placeholder="Enter Your Name"></p>
+
+    <p>Which Character is Similar to You:<br>
+      <input type="radio" name="favoriteCharacter" value="Gojo">Gojo
+      <input type="radio" name="favoriteCharacter" value="Itachi">Itachi
+      <input type="radio" name="favoriteCharacter" value="Lucky Man">Lucky Man
+      <input type="radio" name="favoriteCharacter" value="Ninja Hatori">Ninja Hatori
+      <!-- Add other radio buttons as needed -->
+    </p>
+
+    <p align="center">
+      <input type="button" value="Show my personality" onclick="showPersonality()">
+    </p>
+
+    <p id="result"></p>
+  </form>
+</body>
+</html>
